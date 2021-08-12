@@ -53,7 +53,7 @@ class UserListener implements EventSubscriber
      *
      * @param LifecycleEventArgs $args
      */
-    public function prePersist(LifecycleEventArgs $args)
+    public function prePersist($args)
     {
         $object = $args->getObject();
         if ($object instanceof UserInterface) {
@@ -66,7 +66,7 @@ class UserListener implements EventSubscriber
      *
      * @param LifecycleEventArgs $args
      */
-    public function preUpdate(LifecycleEventArgs $args)
+    public function preUpdate( $args)
     {
         $object = $args->getObject();
         if ($object instanceof UserInterface) {
@@ -92,7 +92,7 @@ class UserListener implements EventSubscriber
      * @param ObjectManager $om
      * @param UserInterface $user
      */
-    private function recomputeChangeSet(ObjectManager $om, UserInterface $user)
+    private function recomputeChangeSet($om, UserInterface $user)
     {
         $meta = $om->getClassMetadata(get_class($user));
 
